@@ -23,6 +23,7 @@ type Keyring interface {
 	Search(string) (*Key, error)
 	SetDefaultTimeout(uint)
 	AttachPersistent() (Keyring, error)
+	AttachPersistentWithUID(int) (Keyring, error)
 }
 
 // Named keyrings are user-created keyrings linked to a parent keyring. The
