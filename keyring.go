@@ -102,6 +102,10 @@ func (kr *keyring) AttachPersistent() (Keyring, error) {
 	return attachPersistent(kr.id)
 }
 
+func (kr *keyring) AttachPersistentWithUID(uid int) (Keyring, error) {
+	return attachPersistent(keyId(uid))
+}
+
 // Return the current login session keyring
 func SessionKeyring() (Keyring, error) {
 	return newKeyring(keySpecSessionKeyring)
